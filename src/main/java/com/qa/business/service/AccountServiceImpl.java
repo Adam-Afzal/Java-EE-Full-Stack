@@ -19,14 +19,17 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	public String addAccount(String account) {
+		LOGGER.info("In AccountServiceImpl addAccount ");
 		return repo.createAccount(account);
 	}
 
 	public String updateAccount(Long id, String account) {
+		LOGGER.info("In AccountServiceImpl updateAccount ");
 		return repo.updateAccount(id, account);
 	}
 
 	public String deleteAccount(Long id) {
+		LOGGER.info("In AccountServiceImpl deleteAccount ");
 		return repo.deleteAccount(id);
 
 	}

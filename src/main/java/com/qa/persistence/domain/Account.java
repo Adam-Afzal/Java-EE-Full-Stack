@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Account {
@@ -17,8 +19,10 @@ public class Account {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private Long id;
+
 	private String firstName;
 	private String secondName;
+	@Size(min = 6, max = 6)
 	private String accountNumber;
 	@JoinColumn(name = "account_id")
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
